@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.ephirium.storyline.databinding.ActivityMainBinding;
+import com.ephirium.storyline.feature.ui.CreateFragment;
 import com.ephirium.storyline.feature.ui.PostsPageFragment;
 
 public class MainActivity extends AppCompatActivity implements FragmentHolder {
@@ -43,8 +44,10 @@ public class MainActivity extends AppCompatActivity implements FragmentHolder {
                 startFragment(PostsPageFragment.newInstance(), true);
                 break;
             case R.id.create:
+                startFragment(CreateFragment.newInstance(), true);
                 break;
             case R.id.profile:
+                startFragment(ProfileFragment.newInstance(), true);
                 break;
         }
     }

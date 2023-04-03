@@ -11,7 +11,7 @@ public class PostsMapper {
         List<Post> converted = new ArrayList<>();
 
         for(PostDto post : postData){
-            Post newPost = new Post(post.name, post.description);
+            Post newPost = new Post(post.name, post.description, post.id + ".jpg");
             converted.add(newPost);
         }
 

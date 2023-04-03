@@ -12,8 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ephirium.storyline.databinding.FragmentPostsPageBinding;
+import com.ephirium.storyline.feature.model.Post;
 import com.ephirium.storyline.feature.presentation.PostsPageViewModel;
 import com.ephirium.storyline.feature.ui.recycler.PostsAdapter;
+import com.ephirium.storyline.feature.ui.recycler.PostsCallback;
+import com.ephirium.storyline.feature.ui.recycler.PostsCallbackBuilder;
 
 import org.jetbrains.annotations.Contract;
 
@@ -23,9 +26,16 @@ public class PostsPageFragment extends Fragment {
 
     private PostsPageViewModel viewModel;
 
-    private final PostsAdapter adapter = new PostsAdapter();
+    private final PostsAdapter adapter = new PostsAdapter(new PostsCallbackBuilder()
+            .addOnClickCallback(post -> {
 
-    public PostsPageFragment() { }
+            })
+            .addOnLikeCallback(post -> {
+
+            }).build());
+
+    public PostsPageFragment() {
+    }
 
     @NonNull
     @Contract(" -> new")
