@@ -1,4 +1,4 @@
-package com.ephirium.storyline;
+package com.ephirium.storyline.feature.ui;
 
 import android.os.Bundle;
 

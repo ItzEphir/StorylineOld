@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/group_format">
+        <item
+            android:id="@+id/make_bold"
+            android:title="@string/make_bold" />
+
+        <item
+            android:id="@+id/make_italic"
+            android:title="@string/make_italic" />
+
+        <item
+            android:id="@+id/make_underline"
+            android:title="@string/make_underline" />
+    </group>
+</menu>

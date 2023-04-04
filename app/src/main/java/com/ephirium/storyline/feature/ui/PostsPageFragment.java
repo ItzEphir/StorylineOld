@@ -24,7 +24,6 @@ public class PostsPageFragment extends Fragment {
 
     private FragmentPostsPageBinding binding;
 
-
     private PostsPageViewModel viewModel;
 
     private final PostsAdapter adapter = new PostsAdapter(new PostsCallbackBuilder()

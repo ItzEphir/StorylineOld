@@ -6,5 +6,11 @@
     <string name="home">Home</string>
     <string name="create">Create</string>
     <string name="profile">Profile</string>
-    <string name="post_image_description">PostImage</string>
+    <string name="post_image_description">Post Image</string>
+    <string name="launcher_icon_description">Launcher Icon</string>
+    <string name="create_story_description"><b>Write</b> your story now <b>:)</b></string>
+    <string name="make_bold"><b>Bold</b></string>
+    <string name="make_italic"><i>Italic</i></string>
+    <string name="make_underline"><u>Underline</u></string>
+    <string name="set_format">Format</string>
 </resources>

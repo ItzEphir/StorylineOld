@@ -1,8 +1,5 @@
 package com.ephirium.storyline.feature.ui.recycler;
 
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +9,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ephirium.storyline.databinding.LayoutPostBinding;
 import com.ephirium.storyline.feature.model.Post;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import java.io.File;
-import java.net.URI;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +66,7 @@ class PostViewHolder extends RecyclerView.ViewHolder {
                     Picasso.get().load(uri).into(binding.image);
                     binding.progressBar.setVisibility(View.GONE);
                 }).addOnFailureListener(Throwable::printStackTrace);
+        binding.layout.setOnClickListener(v -> callback.onClick(post));
         binding.name.setText(post.getName());
         binding.description.setText(post.getDescription());
     }
