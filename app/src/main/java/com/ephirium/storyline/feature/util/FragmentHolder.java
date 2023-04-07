@@ -1,4 +1,4 @@
-package com.ephirium.storyline.util;
+package com.ephirium.storyline.feature.util;
 
 import androidx.fragment.app.Fragment;
 

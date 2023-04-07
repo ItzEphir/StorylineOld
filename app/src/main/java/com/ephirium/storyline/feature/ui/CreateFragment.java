@@ -44,20 +44,16 @@ public class CreateFragment extends Fragment {
 
             @Override
             public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
-
                 return true;
             }
 
             @Override
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
-
                 return true;
             }
 
             @Override
-            public void onDestroyActionMode(ActionMode mode) {
-
-            }
+            public void onDestroyActionMode(ActionMode mode) { }
         });
 
         return binding.getRoot();

@@ -1,4 +1,4 @@
-package com.ephirium.storyline;
+package com.ephirium.storyline.feature.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 import com.ephirium.storyline.databinding.ActivitySplashScreenBinding;
+import com.ephirium.storyline.feature.ui.MainActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -25,8 +26,6 @@ public class SplashScreenActivity extends AppCompatActivity {
 
     private void setRandomText(){
         int a = (int)(Math.random() * 2);
-
-        Log.d("Mytag", String.valueOf(a));
 
         String s = "";
 

@@ -1,5 +1,7 @@
 package com.ephirium.storyline.feature.ui.recycler;
 
+import static com.ephirium.storyline.StorylineLog.*;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

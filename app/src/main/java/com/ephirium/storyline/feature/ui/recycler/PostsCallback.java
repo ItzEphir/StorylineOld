@@ -1,8 +1,5 @@
 package com.ephirium.storyline.feature.ui.recycler;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.ephirium.storyline.feature.model.Post;
 
 public interface PostsCallback {
