@@ -5,41 +5,51 @@ package com.ephirium.storyline
 import android.util.Log
 
 @JvmField
-var defaultTag = "Storyline"
+var defaultTag = "Debug"
 @JvmField
-var infoTag = "StorylineInfo"
+var infoTag = "Info"
 @JvmField
-var warningTag = "StorylineWarning"
+var warningTag = "Warning"
 @JvmField
-var errorTag = "StorylineError"
-@JvmField
-var nullMessage = "Success"
-@JvmField
-var nullWarning = "Warning"
-@JvmField
-var nullError = "Error"
+var errorTag = "Error"
 
-fun log(tag: String = defaultTag, message: String = nullMessage) = Log.d(tag, message)
 
-fun <T> log(tag: String = defaultTag, message: String = nullMessage, clazz: Class<T>? = null) =
+@JvmOverloads
+fun log(tag: String = defaultTag, message: String) = Log.d(tag, message)
+
+fun <T> log(tag: String, message: String, clazz: Class<T>? = null) =
     Log.d(tag, message + " " + clazz?.typeName)
 
-fun log_error(tag: String = errorTag, message: String = nullError) = Log.d(tag, message)
+infix fun Any.log(message: String) = log(defaultTag, message, this.javaClass)
 
-fun <T> log_error(tag: String = errorTag, message: String = nullError, clazz: Class<T>? = null) =
+@JvmOverloads
+fun logError(tag: String = errorTag, message: String) = Log.d(tag, message)
+
+fun <T> logError(tag: String = errorTag, message: String, clazz: Class<T>? = null) =
     Log.e(tag, message + " " + clazz?.typeName)
 
+infix fun Any.logError(message: String) = logError(defaultTag, message, this.javaClass)
+
+@JvmOverloads
 fun info(tag: String = infoTag, message: String) = Log.i(tag, message)
 
 fun <T> info(tag: String = infoTag, message: String, clazz: Class<T>? = null) =
     Log.i(tag, message + " " + clazz?.typeName)
 
-fun warning(tag: String = warningTag, message: String = nullWarning) = Log.w(tag, message)
+infix fun Any.info(message: String) = info(infoTag, message, this.javaClass)
 
-fun <T> warning(tag: String = warningTag, message: String = nullWarning, clazz: Class<T>? = null) =
+@JvmOverloads
+fun warning(tag: String = warningTag, message: String) = Log.w(tag, message)
+
+fun <T> warning(tag: String = warningTag, message: String, clazz: Class<T>? = null) =
     Log.w(tag, message + " " + clazz?.typeName)
 
-fun error(tag: String = errorTag, message: String = nullError) = Log.e(tag, message)
+infix fun Any.warning(message: String) = warning(warningTag, message, this.javaClass)
 
-fun <T> error(tag: String = errorTag, message: String = nullError, clazz: Class<T>? = null) =
+@JvmOverloads
+fun error(tag: String = errorTag, message: String) = Log.e(tag, message)
+
+fun <T> error(tag: String = errorTag, message: String, clazz: Class<T>? = null) =
     Log.e(tag, message + " " + clazz?.typeName)
+
+infix fun Any.error(message: String) = error(errorTag, message, this.javaClass)
