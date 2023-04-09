@@ -22,7 +22,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostViewHolder> {
 
     private final PostsCallback callback;
 
-    public PostsAdapter(PostsCallback callback){
+    public PostsAdapter(PostsCallback callback) {
         this.callback = callback;
     }
 
@@ -43,7 +43,7 @@ public class PostsAdapter extends RecyclerView.Adapter<PostViewHolder> {
         return posts.size();
     }
 
-    public void setPosts(List<Post> posts){
+    public void setPosts(List<Post> posts) {
         int size = getItemCount();
         this.posts = new ArrayList<>(posts);
         notifyItemRangeChanged(0, Math.max(size, getItemCount()));
@@ -61,13 +61,20 @@ class PostViewHolder extends RecyclerView.ViewHolder {
         this.callback = callback;
     }
 
-    public void bind(Post post){
+    public void bind(Post post) {
         binding.progressBar.setVisibility(View.VISIBLE);
-        FirebaseStorage.getInstance().getReference().child(post.getFileSource()).getDownloadUrl()
-                .addOnSuccessListener(uri -> {
-                    Picasso.get().load(uri).into(binding.image);
-                    binding.progressBar.setVisibility(View.GONE);
-                }).addOnFailureListener(Throwable::printStackTrace);
+        if (post.getDrawable() == null)
+            FirebaseStorage.getInstance().getReference().child(post.getFileSource()).getDownloadUrl()
+                    .addOnSuccessListener(uri -> {
+                        Picasso.get().load(uri).into(binding.image);
+                        post.setDrawable(binding.image.getDrawable());
+                        binding.progressBar.setVisibility(View.GONE);
+                    }).addOnFailureListener(e ->
+                            logError("Error in downloading image", PostViewHolder.class));
+        else {
+            binding.progressBar.setVisibility(View.GONE);
+            binding.image.setImageDrawable(post.getDrawable());
+        }
         binding.layout.setOnClickListener(v -> callback.onClick(post));
         binding.name.setText(post.getName());
         binding.description.setText(post.getDescription());

@@ -26,6 +26,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentProfileBinding.inflate(getLayoutInflater());
 
+
         return binding.getRoot();
     }
 }

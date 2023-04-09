@@ -1,10 +1,15 @@
 package com.ephirium.storyline.feature.ui;
 
+import static com.ephirium.storyline.StorylineLog.error;
+import static com.ephirium.storyline.StorylineLog.logError;
+
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
@@ -38,7 +43,6 @@ public class PostsPageFragment extends Fragment {
     }
 
     @NonNull
-    @Contract(" -> new")
     public static PostsPageFragment newInstance() {
         return new PostsPageFragment();
     }
@@ -47,11 +51,16 @@ public class PostsPageFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentPostsPageBinding.inflate(getLayoutInflater());
-
-        viewModel = new ViewModelProvider(this).get(PostsPageViewModel.class);
         binding.recycler.setAdapter(adapter);
 
-        viewModel.postsList.observe(getViewLifecycleOwner(), adapter::setPosts);
+        if (getActivity() != null) {
+            viewModel = new ViewModelProvider(getActivity()).get(PostsPageViewModel.class);
+            viewModel.postsList.observe(getActivity(), adapter::setPosts);
+        }
+        else{
+            error("Activity does not exist", PostsPageFragment.class);
+            throw new RuntimeException("Activity does not exist");
+        }
         viewModel.observePosts();
 
         return binding.getRoot();

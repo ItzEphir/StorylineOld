@@ -3,6 +3,7 @@ package com.ephirium.storyline.feature.ui;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.MenuItem;
 
 import com.ephirium.storyline.R;
 import com.ephirium.storyline.databinding.ActivityMainBinding;
+import com.ephirium.storyline.feature.presentation.PostsPageViewModel;
 import com.ephirium.storyline.feature.ui.CreateFragment;
 import com.ephirium.storyline.feature.ui.PostsPageFragment;
 import com.ephirium.storyline.feature.ui.ProfileFragment;
