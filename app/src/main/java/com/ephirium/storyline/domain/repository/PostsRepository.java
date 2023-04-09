@@ -4,7 +4,6 @@ import com.ephirium.storyline.domain.model.PostDto;
 import com.ephirium.storyline.domain.util.DataListener;
 import com.ephirium.storyline.domain.util.ErrorListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.storage.FirebaseStorage;
 
 import java.util.List;
 

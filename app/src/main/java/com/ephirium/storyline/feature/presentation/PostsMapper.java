@@ -11,6 +11,8 @@ public class PostsMapper {
         List<Post> converted = new ArrayList<>();
 
         for(PostDto post : postData){
+            assert post.name != null;
+            assert post.description != null;
             Post newPost = new Post(post.name, post.description, post.id + ".jpg");
             converted.add(newPost);
         }
