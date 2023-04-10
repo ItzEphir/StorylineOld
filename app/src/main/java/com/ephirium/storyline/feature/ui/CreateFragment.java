@@ -6,6 +6,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
+import android.text.Spannable;
 import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
@@ -49,13 +51,21 @@ public class CreateFragment extends Fragment {
 
             @Override
             public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
+                
                 return true;
             }
 
             @Override
-            public void onDestroyActionMode(ActionMode mode) { }
+            public void onDestroyActionMode(ActionMode mode) {
+            }
         });
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 }

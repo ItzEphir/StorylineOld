@@ -1,5 +1,5 @@
 <resources>
-    <style name="Theme.Storyline" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.Storyline" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/gray</item>
         <item name="colorSecondary">@color/white</item>
         <item name="colorAccent">@color/yellow</item>
