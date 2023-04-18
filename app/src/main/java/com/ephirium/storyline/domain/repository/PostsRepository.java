@@ -1,8 +1,8 @@
 package com.ephirium.storyline.domain.repository;
 
 import com.ephirium.storyline.domain.model.PostDto;
-import com.ephirium.storyline.domain.util.DataListener;
-import com.ephirium.storyline.domain.util.ErrorListener;
+import com.ephirium.storyline.common.util.DataListener;
+import com.ephirium.storyline.common.util.ErrorListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;

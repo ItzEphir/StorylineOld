@@ -1,10 +1,11 @@
-package com.ephirium.storyline.feature.ui.recycler;
+package com.ephirium.storyline.feature.ui.main.recycler.post;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.ephirium.storyline.feature.model.Post;
 
+@Deprecated
 public class PostsCallbackBuilder {
 
     @Nullable
@@ -39,8 +40,8 @@ public class PostsCallbackBuilder {
         return this;
     }
 
-    public PostsCallback build() {
-        return new PostsCallback() {
+    public PostCallback build() {
+        return new PostCallback() {
             @Override
             public void onClick(Post post) {
                 assert onClickCallback != null;

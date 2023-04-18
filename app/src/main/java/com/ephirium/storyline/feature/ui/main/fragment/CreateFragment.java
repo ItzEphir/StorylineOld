@@ -1,14 +1,10 @@
-package com.ephirium.storyline.feature.ui;
+package com.ephirium.storyline.feature.ui.main.fragment;
 
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.fragment.app.Fragment;
 
-import android.text.Editable;
-import android.text.Spannable;
-import android.util.Log;
 import android.view.ActionMode;
 import android.view.LayoutInflater;
 import android.view.Menu;

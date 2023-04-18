@@ -1,4 +1,4 @@
-package com.ephirium.storyline.feature.ui;
+package com.ephirium.storyline.feature.ui.main;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +12,10 @@ import android.view.MenuItem;
 
 import com.ephirium.storyline.R;
 import com.ephirium.storyline.databinding.ActivityMainBinding;
+import com.ephirium.storyline.feature.ui.auth.AuthActivity;
+import com.ephirium.storyline.feature.ui.main.fragment.CreateFragment;
+import com.ephirium.storyline.feature.ui.main.fragment.PostsPageFragment;
+import com.ephirium.storyline.feature.ui.main.fragment.ProfileFragment;
 import com.ephirium.storyline.feature.util.FragmentHolder;
 
 public class MainActivity extends AppCompatActivity implements FragmentHolder {
@@ -27,13 +31,10 @@ public class MainActivity extends AppCompatActivity implements FragmentHolder {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        /* binding.getRoot().getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-            @Override
-            public boolean onPreDraw() {
-                binding.getRoot().getViewTreeObserver().removeOnPreDrawListener(this);
-                return true;
-            }
-        });*/
+        // if(FirebaseAuth.getInstance().getCurrentUser() == null){
+        //     startActivity(AuthActivity.newIntent(this));
+        // }
+        startActivity(AuthActivity.newIntent(this));
 
         binding.bottomNavigation.setOnItemSelectedListener(item -> {
             onNavigationItemSelected(item);

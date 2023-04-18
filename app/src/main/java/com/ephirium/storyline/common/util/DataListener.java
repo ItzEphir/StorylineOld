@@ -1,4 +1,4 @@
-package com.ephirium.storyline.domain.util;
+package com.ephirium.storyline.common.util;
 
 public interface DataListener<T> {
     void onChange(T value);

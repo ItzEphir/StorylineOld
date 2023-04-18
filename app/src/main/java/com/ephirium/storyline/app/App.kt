@@ -1,6 +1,7 @@
-package com.ephirium.storyline
+package com.ephirium.storyline.app
 
 import android.app.Application
+import com.ephirium.storyline.*
 
 class App : Application() {
     override fun onCreate() {

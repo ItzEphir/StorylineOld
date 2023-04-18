@@ -1,15 +1,11 @@
-package com.ephirium.storyline.feature.ui;
+package com.ephirium.storyline.feature.ui.main.fragment;
 
 import static com.ephirium.storyline.StorylineLog.error;
-import static com.ephirium.storyline.StorylineLog.logError;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.LayoutInflater;
@@ -17,13 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ephirium.storyline.databinding.FragmentPostsPageBinding;
-import com.ephirium.storyline.feature.model.Post;
 import com.ephirium.storyline.feature.presentation.PostsPageViewModel;
-import com.ephirium.storyline.feature.ui.recycler.PostsAdapter;
-import com.ephirium.storyline.feature.ui.recycler.PostsCallback;
-import com.ephirium.storyline.feature.ui.recycler.PostsCallbackBuilder;
-
-import org.jetbrains.annotations.Contract;
+import com.ephirium.storyline.feature.ui.main.recycler.post.PostsAdapter;
+import com.ephirium.storyline.feature.ui.main.recycler.post.PostsCallbackBuilder;
 
 public class PostsPageFragment extends Fragment {
 

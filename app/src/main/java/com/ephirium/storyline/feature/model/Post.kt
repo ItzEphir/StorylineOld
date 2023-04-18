@@ -1,7 +1,15 @@
 package com.ephirium.storyline.feature.model
 
 import android.graphics.drawable.Drawable
+import com.ephirium.storyline.common.recycler.delegate.DelegateItem
 
-data class Post(val name: String, val description: String, val fileSource: String){
+data class Post(val id: String, val name: String, val description: String, val fileSource: String) : DelegateItem{
     var drawable: Drawable? = null
+    override fun getDelegateId(): String {
+        return id
+    }
+
+    override fun getDelegateContent(): String {
+        return name + description + fileSource
+    }
 }

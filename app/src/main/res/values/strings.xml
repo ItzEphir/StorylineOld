@@ -14,4 +14,13 @@
     <string name="make_underline"><u>Underline</u></string>
     <string name="set_format">Format</string>
     <string name="profile_background_description">Background image for profile</string>
+    <string name="title_activity_auth">AuthActivity</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="signup_recommendation">Don`t have an account? Sign up!</string>
+    <string name="signin_recommendation">Already have an account? Sign in!</string>
+    <string name="sign_up">Sign up</string>
+    <string name="username">Name</string>
+    <string name="user_bio">Bio</string>
 </resources>
