@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.ephirium.storyline.feature.model.Post;
+import com.ephirium.storyline.feature.ui.main.recycler.post.callback.PostOnClickCallback;
 
 @Deprecated
 public class PostsCallbackBuilder {
@@ -17,29 +18,37 @@ public class PostsCallbackBuilder {
     @Nullable
     private OnSwipeCallback onSwipeCallback;
 
-    @Nullable
-    private OnLikeCallback onLikeCallback;
+    public PostsCallbackBuilder(){}
 
+    public PostsCallbackBuilder(PostCallback callback){
+        onClickCallback = callback::onClick;
+        onMoveCallback = callback::onMove;
+        onSwipeCallback = callback::onSwipe;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Deprecated
     public PostsCallbackBuilder addOnClickCallback(@NonNull OnClickCallback callback) {
         onClickCallback = callback;
         return this;
     }
 
+    @SuppressWarnings("deprecation")
+    @Deprecated
     public PostsCallbackBuilder addOnMoveCallback(@NonNull OnMoveCallback callback) {
         onMoveCallback = callback;
         return this;
     }
 
+    @SuppressWarnings("deprecation")
+    @Deprecated
     public PostsCallbackBuilder addOnSwipeCallback(@NonNull OnSwipeCallback callback) {
         onSwipeCallback = callback;
         return this;
     }
 
-    public PostsCallbackBuilder addOnLikeCallback(@NonNull OnLikeCallback callback) {
-        onLikeCallback = callback;
-        return this;
-    }
-
+    @SuppressWarnings("deprecation")
+    @Deprecated
     public PostCallback build() {
         return new PostCallback() {
             @Override
@@ -59,13 +68,14 @@ public class PostsCallbackBuilder {
                 assert onSwipeCallback != null;
                 onSwipeCallback.onSwipe(direction, pos);
             }
-
-            @Override
-            public void onLike(Post post) {
-                assert onLikeCallback != null;
-                onLikeCallback.onLikeClicked(post);
-            }
         };
+    }
+
+    public com.ephirium.storyline.feature.ui.main.recycler.post.callback.PostCallback actual(){
+        PostCallback callback = build();
+        return new com.ephirium.storyline.feature.ui.main.recycler.post.callback.PostCallback(callback::onClick)
+                .addOnMoveCallback(callback::onMove)
+                .addOnSwipeCallback(callback::onSwipe);
     }
 
     public interface OnClickCallback {
@@ -78,9 +88,5 @@ public class PostsCallbackBuilder {
 
     public interface OnSwipeCallback {
         void onSwipe(int direction, int position);
-    }
-
-    public interface OnLikeCallback {
-        void onLikeClicked(Post post);
     }
 }

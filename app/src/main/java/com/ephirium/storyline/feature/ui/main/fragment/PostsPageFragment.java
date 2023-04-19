@@ -13,9 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.ephirium.storyline.databinding.FragmentPostsPageBinding;
+import com.ephirium.storyline.feature.model.Post;
 import com.ephirium.storyline.feature.presentation.PostsPageViewModel;
 import com.ephirium.storyline.feature.ui.main.recycler.post.PostsAdapter;
 import com.ephirium.storyline.feature.ui.main.recycler.post.PostsCallbackBuilder;
+import com.ephirium.storyline.feature.ui.main.recycler.post.callback.PostCallback;
+import com.ephirium.storyline.feature.ui.main.recycler.post.callback.PostOnClickCallback;
 
 public class PostsPageFragment extends Fragment {
 
@@ -23,16 +26,18 @@ public class PostsPageFragment extends Fragment {
 
     private PostsPageViewModel viewModel;
 
-    private final PostsAdapter adapter = new PostsAdapter(new PostsCallbackBuilder()
-            .addOnClickCallback(post -> {
+    private final PostsAdapter adapter = new PostsAdapter(new PostCallback(
+            post -> {
 
             })
-            .addOnLikeCallback(post -> {
+            .addOnMoveCallback((from, to) -> {
 
-            }).build());
+            })
+            .addOnSwipeCallback((direction, position) -> {
 
-    public PostsPageFragment() {
-    }
+            }));
+
+    public PostsPageFragment() { }
 
     @NonNull
     public static PostsPageFragment newInstance() {
@@ -48,8 +53,7 @@ public class PostsPageFragment extends Fragment {
         if (getActivity() != null) {
             viewModel = new ViewModelProvider(getActivity()).get(PostsPageViewModel.class);
             viewModel.postsList.observe(getActivity(), adapter::setPosts);
-        }
-        else{
+        } else {
             error("Activity does not exist", PostsPageFragment.class);
             throw new RuntimeException("Activity does not exist");
         }

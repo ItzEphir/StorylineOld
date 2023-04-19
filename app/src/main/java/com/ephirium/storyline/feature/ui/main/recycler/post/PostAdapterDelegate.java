@@ -15,12 +15,20 @@ public class PostAdapterDelegate implements AdapterDelegate {
 
     private final PostCallback callback;
 
+    @SuppressWarnings("unused")
     public PostAdapterDelegate(){
         callback = new PostCallback();
     }
 
+    @SuppressWarnings("unused")
     public PostAdapterDelegate(PostCallback callback){
         this.callback = callback;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Deprecated
+    public PostAdapterDelegate(com.ephirium.storyline.feature.ui.main.recycler.post.PostCallback callback){
+        this.callback = new PostsCallbackBuilder(callback).actual();
     }
 
     @Override

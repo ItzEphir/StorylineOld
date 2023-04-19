@@ -7,6 +7,5 @@ public interface PostCallback {
     void onClick(Post post);
     void onMove(int from, int to);
     void onSwipe(int direction, int pos);
-    void onLike(Post post);
 }
 

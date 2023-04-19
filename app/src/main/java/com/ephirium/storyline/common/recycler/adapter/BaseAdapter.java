@@ -57,7 +57,8 @@ public class BaseAdapter extends ListAdapter<DelegateItem, ViewHolder> {
     public int getItemViewType(int position) {
         var iterator = delegates.listIterator();
         while(iterator.hasNext())
-            if(iterator.next().isOfViewType(getCurrentList().get(position))) return iterator.previousIndex() + 1;
+            if(iterator.next().isOfViewType(getCurrentList().get(position)))
+                return iterator.previousIndex() + 1;
         return -1;
     }
 

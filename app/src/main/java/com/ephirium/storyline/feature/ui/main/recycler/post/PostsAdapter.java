@@ -17,6 +17,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostViewHolder> {
 
     private final com.ephirium.storyline.feature.ui.main.recycler.post.callback.PostCallback callback;
 
+    @SuppressWarnings("deprecation")
+    @Deprecated
     public PostsAdapter(PostCallback callback) {
         this.callback = new com.ephirium.storyline.feature.ui.main.recycler.post.callback.PostCallback()
                 .addOnClickCallback(callback::onClick)

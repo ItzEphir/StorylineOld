@@ -2,6 +2,7 @@ package com.ephirium.storyline.feature.ui.main.recycler.post.callback;
 
 
 import com.ephirium.storyline.feature.model.Post;
+import com.ephirium.storyline.feature.ui.main.recycler.post.PostsCallbackBuilder;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,6 +11,22 @@ public class PostCallback{
     private final List<PostOnClickCallback> onClickCallbacks = new ArrayList<>();
     private final List<PostOnMoveCallback> onMoveCallbacks = new ArrayList<>();
     private final List<PostOnSwipeCallback> onSwipeCallbacks = new ArrayList<>();
+
+    public PostCallback(){
+        // default
+    }
+
+    public PostCallback(PostOnClickCallback callback){
+        onClickCallbacks.add(callback);
+    }
+
+    @SuppressWarnings({"deprecation", "unused"})
+    public PostCallback(com.ephirium.storyline.feature.ui.main.recycler.post.PostCallback callback){
+        PostCallback postCallback = new PostsCallbackBuilder(callback).actual();
+        onClickCallbacks.add(postCallback::onClick);
+        onMoveCallbacks.add(postCallback::onMove);
+        onSwipeCallbacks.add(postCallback::onSwipe);
+    }
 
     public PostCallback addOnClickCallback(PostOnClickCallback callback){
         onClickCallbacks.add(callback);
