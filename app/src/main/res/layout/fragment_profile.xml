@@ -1,28 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/recycler"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorSecondary"
-    tools:context=".feature.ui.main.fragment.ProfileFragment">
-
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:title="Profile"
-        app:titleTextColor="?attr/colorAccent" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:backgroundTint="?attr/colorSecondary"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
-        tools:itemCount="6"
-        tools:listitem="@layout/view_post" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    tools:context=".ui.main.fragment.ProfileFragment"
+    tools:itemCount="6"
+    tools:listitem="@layout/view_post"/>

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
-    android:background="?attr/colorSecondary">
+    android:layout_margin="5dp">
 
 
     <FrameLayout
@@ -12,12 +11,14 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/avatar">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="35dp"
-            android:backgroundTint="?attr/colorPrimary"
-            app:cardCornerRadius="10dp">
+            app:cardBackgroundColor="?attr/colorControlHighlight"
+            app:cardCornerRadius="10dp"
+            app:strokeColor="@color/black"
+            app:strokeWidth="1dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -45,7 +46,7 @@
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/name" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
+        </com.google.android.material.card.MaterialCardView>
     </FrameLayout>
 
 
@@ -53,13 +54,14 @@
         android:id="@+id/avatar"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        app:riv_corner_radius="70dp"
-        android:alpha="1"
-        android:src="@drawable/ic_action_name"
         android:background="@color/white"
-        app:riv_mutate_background="true"
+        android:src="@drawable/ic_action_name"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:riv_tile_mode="mirror" />
+        app:riv_border_color="@color/black"
+        app:riv_border_width="1dp"
+        app:riv_corner_radius="70dp"
+        app:riv_mutate_background="true"
+        app:riv_tile_mode="clamp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

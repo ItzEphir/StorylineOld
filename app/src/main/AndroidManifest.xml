@@ -15,7 +15,7 @@
         android:theme="@style/Theme.Storyline"
         tools:targetApi="31">
         <activity
-            android:name=".feature.ui.main.MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.Storyline.Starting">
             <intent-filter>
@@ -24,9 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".feature.ui.auth.AuthActivity"
-            android:theme="@style/Theme.Storyline"/>
     </application>
 
 </manifest>

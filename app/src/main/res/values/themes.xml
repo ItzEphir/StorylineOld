@@ -1,10 +1,3 @@
 <resources>
-    <style name="Theme.Storyline" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="colorPrimary">@color/gray</item>
-        <item name="colorSecondary">@color/white</item>
-        <item name="colorOnPrimary">@color/white</item>
-        <item name="colorOnSecondary">@color/gray</item>
-        <item name="colorAccent">@color/yellow</item>
-        <item name="android:statusBarColor">?attr/colorAccent</item>
-    </style>
+    <style name="Theme.Storyline" parent="Theme.Material3.DayNight.NoActionBar"/>
 </resources>
