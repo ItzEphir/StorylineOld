@@ -7,6 +7,6 @@
     android:layout_height="match_parent"
     android:backgroundTint="?attr/colorSecondary"
     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    tools:context=".ui.main.fragment.PostsPageFragment"
+    tools:context=".ui.fragment.PostsPageFragment"
     tools:itemCount="10"
     tools:listitem="@layout/view_post" />

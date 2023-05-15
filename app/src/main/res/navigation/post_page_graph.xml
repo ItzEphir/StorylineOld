@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/postsPageFragment2"
-        android:name="com.ephirium.storyline.ui.main.fragment.PostsPageFragment"
+        android:name="com.ephirium.storyline.ui.fragment.PostsPageFragment"
         android:label="fragment_posts_page"
         tools:layout="@layout/fragment_posts_page" />
 </navigation>

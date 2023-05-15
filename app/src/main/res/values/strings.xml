@@ -28,4 +28,5 @@
     <string name="title_story_description">Enter story`s title</string>
     <string name="add_chapter">Add Chapter</string>
     <string name="chapter_enter_title">Enter chapter`s title</string>
+    <string name="saved_user_key">SavedUserDto</string>
 </resources>
