@@ -1,4 +1,4 @@
-package com.ephirium.storyline.ui.fragment;
+package com.ephirium.storyline.ui.fragment
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.ephirium.common.log.log
 
 import com.ephirium.storyline.R
 
@@ -17,6 +18,8 @@ class SignInFragment : Fragment(R.layout.fragment_sign_in) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        log("SignIn")
 
         binding.signup.setOnClickListener {
             findNavController().navigate(SignInFragmentDirections.actionSignInFragmentToSignUpFragment())

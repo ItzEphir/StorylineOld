@@ -1,4 +1,4 @@
-package com.ephirium.storyline.ui.fragment;
+package com.ephirium.storyline.ui.fragment
 
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.ephirium.storyline.R
@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.view.View;
+import com.ephirium.common.log.log
 
 import com.ephirium.storyline.databinding.FragmentPostsPageBinding;
 import com.ephirium.storyline.presentation.PostsPageViewModel;
@@ -25,18 +26,20 @@ class PostsPageFragment : Fragment(R.layout.fragment_posts_page) {
     private val adapter = PostAdapter(PostCallback {
 
     }.addOnMoveCallback { from, to ->
-        {
+        run {
 
         }
     }.addOnSwipeCallback { direction, position ->
-        {
+        run {
 
         }
     })
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.recycler.adapter = adapter;
+        binding.recycler.adapter = adapter
+
+        log("PostPageFragment")
 
         viewModel.postsList.observe(requireActivity(), adapter::setPosts)
 
